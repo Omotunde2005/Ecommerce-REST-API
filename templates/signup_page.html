@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+</head>
+<body>
+
+<h1>Register Here!</h1>
+
+<form method="post" action="">
+
+    {% csrf_token %}
+
+    {% for message in messages %}
+{% if message %}
+
+<ul>
+    <li>
+        {{ message }}
+    </li>
+</ul>
+
+{% endif %}
+{% endfor %}
+
+
+    {{ form.as_p }}
+    <input type="submit" title="Register" name="register">
+</form>
+
+
+</body>
+</html>

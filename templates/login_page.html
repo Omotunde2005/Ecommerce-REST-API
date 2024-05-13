@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+</head>
+<body>
+<h1>Login here!</h1>
+
+<form method="post" action="" novalidate>
+    {% csrf_token %}
+
+    {% for message in messages %}
+{% if message %}
+
+<ul>
+    <li>
+        {{ message }}
+    </li>
+</ul>
+
+{% endif %}
+    {% endfor %}
+
+
+    {{ form.as_p }}
+    <input type="submit" title="Login" name="Login">
+</form>
+
+</body>
+</html>
